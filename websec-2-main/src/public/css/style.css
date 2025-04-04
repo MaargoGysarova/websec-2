@@ -1,0 +1,249 @@
+:root {
+    --primary-color: #2196F3;
+    --primary-dark: #1976D2;
+    --secondary-color: #757575;
+    --background-color: #f5f5f5;
+    --surface-color: #ffffff;
+    --text-primary: #212121;
+    --text-secondary: #757575;
+    --border-color: #e0e0e0;
+    --hover-color: #e3f2fd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.app-header {
+    background-color: var(--surface-color);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    margin-bottom: 24px;
+}
+
+.app-header h1 {
+    color: var(--primary-color);
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.selector-container {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.select-wrapper {
+    flex: 1;
+    min-width: 250px;
+}
+
+.select-wrapper label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.custom-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--surface-color);
+    font-size: 1rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.custom-select:hover {
+    border-color: var(--primary-color);
+}
+
+.custom-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--hover-color);
+}
+
+.schedule-controls {
+    margin-bottom: 24px;
+}
+
+.week-controls,
+.day-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.control-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.control-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.control-button.secondary {
+    background-color: var(--surface-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.control-button.secondary:hover {
+    background-color: var(--hover-color);
+}
+
+.button-icon {
+    font-size: 1.2rem;
+}
+
+.selected {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    text-align: center;
+    padding: 8px 16px;
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px var(--shadow-color);
+}
+
+.schedule-table-wrapper {
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    overflow-x: auto;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.schedule-table th {
+    background-color: var(--hover-color);
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.schedule-table tr:hover {
+    background-color: var(--hover-color);
+}
+
+.groupLink {
+    color: var(--primary-color);
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 0;
+    transition: all 0.3s ease;
+}
+
+.groupLink:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+@media (max-width: 1080px) {
+    .weekButton {
+        display: none;
+    }
+}
+
+@media (min-width: 1081px) {
+    .dayButton {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        padding: 12px;
+    }
+
+    .app-header {
+        padding: 16px;
+    }
+
+    .selector-container {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .week-controls,
+    .day-controls {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .control-button {
+        width: 100%;
+    }
+
+    .schedule-table-wrapper {
+        margin: 0 -12px;
+        border-radius: 0;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.app-container {
+    animation: fadeIn 0.5s ease-out;
+}

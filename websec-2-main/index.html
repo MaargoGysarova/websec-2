@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="js/script.js" defer></script>
+    <title>SSAU Расписание</title>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Расписание СГАУ</h1>
+            <div class="selector-container">
+                <div class="select-wrapper">
+                    <label for="group">Группа</label>
+                    <select id="group" class="custom-select">
+                        <option value="" disabled selected>Выберите группу</option>
+                    </select>
+                </div>
+                <div class="select-wrapper">
+                    <label for="teacher">Преподаватель</label>
+                    <select id="teacher" class="custom-select">
+                        <option value="" disabled selected>Выберите преподавателя</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <main class="schedule-container">
+            <div class="schedule-controls">
+                <div class="week-controls">
+                    <button id="previousButton" onclick="changeWeek(false)" class="control-button">
+                        <span class="button-icon">←</span> Предыдущая неделя
+                    </button>
+                    <h2 id="selected" class="selected"></h2>
+                    <button id="nextButton" onclick="changeWeek(true)" class="control-button">
+                        Следующая неделя <span class="button-icon">→</span>
+                    </button>
+                </div>
+                <div class="day-controls">
+                    <button id="previousDay" class="control-button secondary">
+                        <span class="button-icon">←</span> Пред. день
+                    </button>
+                    <button id="nextDay" class="control-button secondary">
+                        След. день <span class="button-icon">→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="schedule-table-wrapper">
+                <table id="scheduleBody" class="schedule-table"></table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
