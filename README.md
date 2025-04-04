@@ -26,4 +26,5 @@
 - **`groupAndTeachers.json`**: Данные о группах и преподавателях.
 - **`README.md`**: Документация для проекта.
 
-![tg_image_333048231](https://github.com/user-attachments/assets/bcbb1a7e-130a-4a09-b8fe-2029b64eb838)
+![2025-04-04 18 00 17](https://github.com/user-attachments/assets/f64b39c6-fe7f-44bb-8dee-35eef29dbb8e)
+
